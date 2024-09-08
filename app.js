@@ -1,11 +1,13 @@
 let userScore = 0;
 let compScore = 0;
-
+//first access
 const choices = document.querySelectorAll(".choice");
+
 const msg = document.querySelector("#msg");
 const userScorePara = document.querySelector("#user-score");
 const compScorePara = document.querySelector("#comp-score");
 
+//3rd Function
 const genComprChoice = () => {
     const options = ["rock", "paper", "scissors"];
     const randIdx = Math.floor(Math.random() * 3);
@@ -13,11 +15,10 @@ const genComprChoice = () => {
 }
 
 const drawGame = () => {
-    
     msg.innerText ="Game Was Draw!Play Again!";
     msg.style.backgroundColor =" #081b31";
 }
-
+//5th Function
 const showWinner = (userWin,userChoice,compChoice) => {
     if (userWin) {
         userScore++;
@@ -31,9 +32,9 @@ const showWinner = (userWin,userChoice,compChoice) => {
         msg.style.backgroundColor ="red";
     }
 }
-
+//2nd Function,//4th Function
 const playGame = (userChoice) => {
-    // Generate Computer choice
+    // Generate Computer choice.....
     const compChoice = genComprChoice();
     if (userChoice === compChoice) {
         // Draw Game
@@ -51,6 +52,8 @@ const playGame = (userChoice) => {
     }
 }
 
+
+//1st Function
 choices.forEach((choice) => {
     choice.addEventListener("click", () => {
         const userChoice = choice.getAttribute("id");
